@@ -4,33 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/pink_glamor"
     tools:context=".MainActivity">
-
-    <ImageView
-        android:id="@+id/id_top_image_view"
-        app:layout_constraintHeight_percent="0.20"
-        android:scaleType="centerCrop"
-        android:layout_width="match_parent"
-        android:background="@color/pink_glamor"
-        android:layout_height="0dp"
-        app:layout_constraintVertical_bias="0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container_layout"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.9"
         android:layout_height="0dp"
         android:background="@drawable/container_bg"
-        app:layout_constraintHeight_percent="0.82"
-        app:layout_constraintVertical_bias="1"
+        app:layout_constraintHeight_percent="0.65"
+        app:layout_constraintVertical_bias="0.8"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         >
         <fragment
             android:id="@+id/id_main_fragment_host"
@@ -42,18 +30,19 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:name="androidx.navigation.fragment.NavHostFragment"
-            app:navGraph="@navigation/fragmentnavigation" />
+            app:navGraph="@navigation/fragment_navigation" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/ic_money_icon"
-        app:layout_constraintVertical_bias="0.3"
-        app:layout_constraintBottom_toTopOf="@id/container_layout"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/id_top_image_view"/>
+        app:layout_constraintVertical_bias="0.08"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -61,12 +50,12 @@
         android:fontFamily="@font/amaranth_bold"
         android:text="Payment Methods"
         android:textColor="@color/white"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@id/container_layout"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/id_top_image_view"
-        app:layout_constraintVertical_bias="0.8" />
+        android:textSize="30sp"
+        app:layout_constraintVertical_bias="0.17"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 
 

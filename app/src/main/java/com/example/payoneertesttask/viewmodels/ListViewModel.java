@@ -1,6 +1,7 @@
 package com.example.payoneertesttask.viewmodels;
 
 import android.app.Application;
+import android.content.Context;
 
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
@@ -17,8 +18,8 @@ public class ListViewModel extends AndroidViewModel {
         super(application);
     }
 
-    public void init() {
-        mListRepositories = new ListRepositories();
+    public void init(Context context) {
+        mListRepositories = new ListRepositories(context);
         mListResultLiveData = mListRepositories.getListLiveData();
     }
 

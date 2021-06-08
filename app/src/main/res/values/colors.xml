@@ -11,5 +11,7 @@
     <color name="red_secondary">#c0392b</color>
     <color name="green_light">#55efc4</color>
     <color name="pink_glamor">#ff7675</color>
+    <color name="pink_2">#fab1a0</color>
     <color name="normal_text_color">#636e72</color>
+    <color name="green_deep">#1abc9c</color>
 </resources>

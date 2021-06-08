@@ -34,7 +34,7 @@ public class ListResultFragment extends Fragment {
         super.onCreate(savedInstanceState);
         mListAdapter = new ListResultRecyclerViewAdapter();
         mListViewModel = new ViewModelProvider(this).get(ListViewModel.class);
-        mListViewModel.init();
+        mListViewModel.init(getContext());
         mListViewModel.getListResultLiveData().observe(this, new Observer<ListResult>() {
             @Override
             public void onChanged(ListResult listResult) {
@@ -51,14 +51,6 @@ public class ListResultFragment extends Fragment {
 
         RecyclerView recyclerView = view.findViewById(R.id.list_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-//        DividerItemDecoration itemDecoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
-//        Drawable drawable = ContextCompat.getDrawable(recyclerView.getContext(), R.drawable.list_item_bg);
-//
-//        Log.e("ListResultFragment", "drawable: " + drawable);
-//        if (drawable != null) {
-//            itemDecoration.setDrawable(drawable);
-//        }
-//        recyclerView.addItemDecoration(itemDecoration);
         recyclerView.setAdapter(mListAdapter);
         return view;
     }
