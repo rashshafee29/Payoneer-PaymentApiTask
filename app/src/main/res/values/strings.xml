@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">PayoneerTestTask</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">Payoneer-PaymentApiTask</string>
+    <string name="payment_methods_str">Payment Methods</string>
+    <string name="cancel_str">Cancel</string>
+    <string name="okay_str">Okay</string>
+    <string name="retry_str">Retry</string>
 </resources>

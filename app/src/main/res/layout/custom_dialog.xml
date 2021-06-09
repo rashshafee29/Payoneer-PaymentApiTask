@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="320dp"
     android:layout_height="320dp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_gravity="center"
     android:padding="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -24,7 +25,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="Demo Dialog Text"
         android:textSize="20sp"
         android:padding="10dp"
         android:fontFamily="@font/amaranth"
@@ -32,13 +32,14 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:gravity="center_horizontal" />
+        android:gravity="center_horizontal"
+        tools:text="Demo Dialog Text"/>
 
     <Button
         android:id="@+id/id_dialog_btn_cancel"
         app:layout_constraintHorizontal_bias="0.20"
         app:layout_constraintVertical_bias="0.80"
-        android:text="Cancel"
+        android:text="@string/cancel_str"
         android:fontFamily="@font/amaranth"
         android:textSize="18sp"
         android:layout_width="100dp"
@@ -53,7 +54,7 @@
         android:id="@+id/id_dialog_btn_okay"
         app:layout_constraintHorizontal_bias=".80"
         app:layout_constraintVertical_bias="0.80"
-        android:text="Okay"
+        android:text="@string/okay_str"
         android:fontFamily="@font/amaranth"
         android:textSize="18sp"
         android:layout_width="100dp"

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/id_list_result_fragment"
-        android:name="com.example.payoneertesttask.views.ListResultFragment"
+        android:name="com.example.payoneerpaymentapitask.views.ListResultFragment"
         tools:layout="@layout/fragment_list_result"
         />
 </navigation>

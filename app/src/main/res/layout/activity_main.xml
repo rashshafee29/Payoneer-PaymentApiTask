@@ -34,8 +34,8 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/image_icon_width"
+        android:layout_height="@dimen/image_icon_height"
         android:src="@drawable/ic_money_icon"
         app:layout_constraintVertical_bias="0.08"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -48,9 +48,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/amaranth_bold"
-        android:text="Payment Methods"
+        android:text="@string/payment_methods_str"
         android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textSize="35sp"
         app:layout_constraintVertical_bias="0.17"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
