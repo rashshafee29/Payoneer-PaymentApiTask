@@ -4,4 +4,6 @@
     <string name="cancel_str">Cancel</string>
     <string name="okay_str">Okay</string>
     <string name="retry_str">Retry</string>
+    <string name="network_error_str">Something went wrong\nPlease check network connection and retry</string>
+    <string name="server_error_str">Server Error\nPlease check after sometime</string>
 </resources>

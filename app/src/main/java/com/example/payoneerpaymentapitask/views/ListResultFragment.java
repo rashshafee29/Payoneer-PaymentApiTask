@@ -15,26 +15,26 @@ import android.view.ViewGroup;
 import com.example.payoneerpaymentapitask.R;
 import com.example.payoneerpaymentapitask.adapters.ListResultRecyclerViewAdapter;
 import com.example.payoneerpaymentapitask.models.ListResult;
-import com.example.payoneerpaymentapitask.viewmodels.ListViewModel;
+import com.example.payoneerpaymentapitask.viewmodels.ListResultViewModel;
 
 public class ListResultFragment extends Fragment {
 
-    private ListViewModel mListViewModel;
+    private ListResultViewModel mListResultViewModel;
     private ListResultRecyclerViewAdapter mListAdapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mListAdapter = new ListResultRecyclerViewAdapter();
-        mListViewModel = new ViewModelProvider(this).get(ListViewModel.class);
-        mListViewModel.init(getContext());
-        mListViewModel.getListResultLiveData().observe(this, new Observer<ListResult>() {
+        mListResultViewModel = new ViewModelProvider(this).get(ListResultViewModel.class);
+        mListResultViewModel.init(getContext());
+        mListResultViewModel.getListResultLiveData().observe(this, new Observer<ListResult>() {
             @Override
             public void onChanged(ListResult listResult) {
                 mListAdapter.setValues(listResult.getNetworks().getApplicable());
             }
         });
-        mListViewModel.fetchData();
+        mListResultViewModel.fetchData();
     }
 
     @Override

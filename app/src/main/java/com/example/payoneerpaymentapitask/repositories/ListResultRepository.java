@@ -22,12 +22,12 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ListRepositories {
+public class ListResultRepository {
     private final ApiCallService mApiCallService;
     private final Context mContext;
     private final MutableLiveData<ListResult> mListResultLiveData;
 
-    public ListRepositories(Context context) {
+    public ListResultRepository(Context context) {
         mContext = context;
         mListResultLiveData = new MutableLiveData<>();
         mApiCallService = new ApiCallService(Constant.BASE_URL);
@@ -44,14 +44,14 @@ public class ListRepositories {
                         mListResultLiveData.postValue(response.body());
                     }
                 } else {
-                    Log.e("ListRepositories", "getListData() - response.code: " + response.code());
+                    Log.e("ListResultRepository", "getListData() - response.code: " + response.code());
                     showDialog(false);
                 }
             }
 
             @Override
             public void onFailure(Call<ListResult> call, Throwable t) {
-                Log.e("ListRepositories", "response failed" + t);
+                Log.e("ListResultRepository", "response failed" + t);
                 showDialog(true);
             }
         });
@@ -74,10 +74,10 @@ public class ListRepositories {
 
         if(isFailed) {
             okayBtn.setText(R.string.retry_str);
-            dialogText.setText("Something went wrong\nPlease check network connection and retry");
+            dialogText.setText(R.string.network_error_str);
             dialogIcon.setImageDrawable(ContextCompat.getDrawable(mContext, R.drawable.ic_cancel_icon));
         } else {
-            dialogText.setText("Server Error\nPlease check after sometime");
+            dialogText.setText(R.string.server_error_str);
             dialogIcon.setImageDrawable(ContextCompat.getDrawable(mContext, R.drawable.ic_server_icon));
         }
 

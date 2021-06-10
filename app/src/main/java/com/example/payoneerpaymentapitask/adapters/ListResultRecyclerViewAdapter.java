@@ -22,7 +22,7 @@ public class ListResultRecyclerViewAdapter extends RecyclerView.Adapter<ListResu
     @NonNull
     @Override
     public ListResultRecyclerViewAdapter.ListResultViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.base_list_item, parent, false);
         return new ListResultViewHolder(view);
     }
 
@@ -31,7 +31,7 @@ public class ListResultRecyclerViewAdapter extends RecyclerView.Adapter<ListResu
         Applicable applicableData = mApplicableList.get(position);
         holder.mItemName.setText(applicableData.getLabel());
         String logoUrl = applicableData.getLinks().getLogo();
-        Picasso.get().load(logoUrl).into(holder.mItemLogo);
+        Picasso.get().load(logoUrl).placeholder(R.drawable.circular_progress_animation).into(holder.mItemLogo);
     }
 
     @Override

@@ -7,24 +7,24 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.example.payoneerpaymentapitask.models.ListResult;
-import com.example.payoneerpaymentapitask.repositories.ListRepositories;
+import com.example.payoneerpaymentapitask.repositories.ListResultRepository;
 
-public class ListViewModel extends AndroidViewModel {
+public class ListResultViewModel extends AndroidViewModel {
 
-    private ListRepositories mListRepositories;
+    private ListResultRepository mListResultRepository;
     private LiveData<ListResult> mListResultLiveData;
 
-    public ListViewModel(Application application) {
+    public ListResultViewModel(Application application) {
         super(application);
     }
 
     public void init(Context context) {
-        mListRepositories = new ListRepositories(context);
-        mListResultLiveData = mListRepositories.getListLiveData();
+        mListResultRepository = new ListResultRepository(context);
+        mListResultLiveData = mListResultRepository.getListLiveData();
     }
 
     public void fetchData() {
-        mListRepositories.fetchData();
+        mListResultRepository.fetchData();
     }
 
     public LiveData<ListResult> getListResultLiveData() {
