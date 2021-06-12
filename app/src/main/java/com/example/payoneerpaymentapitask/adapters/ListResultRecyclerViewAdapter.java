@@ -72,8 +72,8 @@ public class ListResultRecyclerViewAdapter extends RecyclerView.Adapter<ListResu
             super(itemView);
 
             mView = itemView.findViewById(R.id.id_containerLayout_1);
-            mItemName = itemView.findViewById(R.id.item_name);
-            mItemLogo = itemView.findViewById(R.id.item_logo);
+            mItemName = itemView.findViewById(R.id.id_item_name);
+            mItemLogo = itemView.findViewById(R.id.id_item_logo);
             mCheckBox = itemView.findViewById(R.id.id_checkbox);
         }
     }

@@ -8,7 +8,7 @@
     tools:context=".activities.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/container_layout"
+        android:id="@+id/id_container_layout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/container_bg"

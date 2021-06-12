@@ -16,11 +16,14 @@ import com.example.payoneerpaymentapitask.R;
 import com.example.payoneerpaymentapitask.adapters.ListResultRecyclerViewAdapter;
 import com.example.payoneerpaymentapitask.models.ListResult;
 import com.example.payoneerpaymentapitask.viewmodels.ListResultViewModel;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 public class ListResultFragment extends Fragment {
 
     private ListResultViewModel mListResultViewModel;
     private ListResultRecyclerViewAdapter mListAdapter;
+    private RecyclerView mRecyclerView;
+    private ShimmerFrameLayout mShimmer;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,9 @@ public class ListResultFragment extends Fragment {
         mListResultViewModel.getListResultLiveData().observe(this, new Observer<ListResult>() {
             @Override
             public void onChanged(ListResult listResult) {
+                mShimmer.stopShimmer();
+                mShimmer.setVisibility(View.GONE);
+                mRecyclerView.setVisibility(View.VISIBLE);
                 mListAdapter.setValues(listResult.getNetworks().getApplicable());
             }
         });
@@ -38,13 +44,27 @@ public class ListResultFragment extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        mShimmer.startShimmer();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mShimmer.stopShimmer();
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_list_result, container, false);
 
-        RecyclerView recyclerView = view.findViewById(R.id.list_recyclerview);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(mListAdapter);
+        mShimmer = view.findViewById(R.id.id_shimmer_frameLayout);
+
+        mRecyclerView = view.findViewById(R.id.id_list_recyclerview);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        mRecyclerView.setAdapter(mListAdapter);
         return view;
     }
 }

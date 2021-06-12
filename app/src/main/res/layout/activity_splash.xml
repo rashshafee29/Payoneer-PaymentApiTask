@@ -9,6 +9,7 @@
 
 
     <ImageView
+        android:id="@+id/id_splash_logo"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:src="@drawable/ic_money_icon"
@@ -20,7 +21,6 @@
         />
 
     <ProgressBar
-        android:id="@+id/data_loading_bar"
         android:layout_width="0dp"
         app:layout_constraintWidth_percent="0.5"
         android:layout_height="wrap_content"
