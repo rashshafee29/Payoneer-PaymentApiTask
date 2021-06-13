@@ -5,7 +5,6 @@
     android:layout_height="wrap_content"
     android:paddingLeft="25dp"
     android:paddingRight="25dp"
-    android:scrollbars="none"
     android:orientation="vertical"
     tools:context=".views.ListResultFragment">
 
