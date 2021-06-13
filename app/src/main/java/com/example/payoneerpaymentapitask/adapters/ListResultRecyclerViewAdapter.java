@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListResultRecyclerViewAdapter extends RecyclerView.Adapter<ListResultRecyclerViewAdapter.ListResultViewHolder> {
+
     private List<Applicable> mApplicableList = new ArrayList<>();
     private int mCheckedPosition = -1;
 
